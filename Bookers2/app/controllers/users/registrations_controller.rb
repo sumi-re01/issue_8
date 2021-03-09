@@ -13,7 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     ThanksMailer.with(user: @user).welcome_email.deliver_later
-    redirect_to (@user)
   end
 
   # GET /resource/edit
